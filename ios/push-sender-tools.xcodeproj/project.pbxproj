@@ -1,0 +1,876 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		E3ADCAB11E812BA5004CEF2B /* main.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCAB01E812BA5004CEF2B /* main.m */; };
+		E3ADCAB41E812BA5004CEF2B /* QBAppDelegate.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCAB31E812BA5004CEF2B /* QBAppDelegate.m */; };
+		E3ADCABA1E812BA5004CEF2B /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ADCAB81E812BA5004CEF2B /* Main.storyboard */; };
+		E3ADCABC1E812BA5004CEF2B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E3ADCABB1E812BA5004CEF2B /* Assets.xcassets */; };
+		E3ADCABF1E812BA5004CEF2B /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E3ADCABD1E812BA5004CEF2B /* LaunchScreen.storyboard */; };
+		E3ADCACA1E812BA5004CEF2B /* push_sender_toolsTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCAC91E812BA5004CEF2B /* push_sender_toolsTests.m */; };
+		E3ADCAD51E812BA5004CEF2B /* push_sender_toolsUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCAD41E812BA5004CEF2B /* push_sender_toolsUITests.m */; };
+		E3ADCAE71E812C7A004CEF2B /* Credentials.plist in Resources */ = {isa = PBXBuildFile; fileRef = E3ADCAE61E812C7A004CEF2B /* Credentials.plist */; };
+		E3ADCAEC1E812DA6004CEF2B /* QBCredentials.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCAEB1E812DA6004CEF2B /* QBCredentials.m */; };
+		E3ADCAF01E813272004CEF2B /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAEF1E813272004CEF2B /* CFNetwork.framework */; };
+		E3ADCAF21E813279004CEF2B /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAF11E813279004CEF2B /* SystemConfiguration.framework */; };
+		E3ADCAF41E81327E004CEF2B /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAF31E81327E004CEF2B /* MobileCoreServices.framework */; };
+		E3ADCAF61E813283004CEF2B /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAF51E813283004CEF2B /* CoreGraphics.framework */; };
+		E3ADCAF81E813287004CEF2B /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAF71E813287004CEF2B /* Security.framework */; };
+		E3ADCAFA1E81328D004CEF2B /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAF91E81328D004CEF2B /* libz.tbd */; };
+		E3ADCAFC1E813292004CEF2B /* libresolv.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAFB1E813292004CEF2B /* libresolv.tbd */; };
+		E3ADCAFE1E813297004CEF2B /* libxml2.2.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAFD1E813297004CEF2B /* libxml2.2.tbd */; };
+		E3ADCB001E8132A3004CEF2B /* Quickblox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAFF1E8132A3004CEF2B /* Quickblox.framework */; };
+		E3ADCB011E8132A3004CEF2B /* Quickblox.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCAFF1E8132A3004CEF2B /* Quickblox.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		E3ADCB061E813472004CEF2B /* QBPushNotificationsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB051E813472004CEF2B /* QBPushNotificationsViewController.m */; };
+		E3ADCB0A1E81371B004CEF2B /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E3ADCB091E81371B004CEF2B /* QuartzCore.framework */; };
+		E3ADCB0D1E8149B0004CEF2B /* QBFieldTableView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB0C1E8149B0004CEF2B /* QBFieldTableView.m */; };
+		E3ADCB151E814A6E004CEF2B /* QBColor.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB141E814A6E004CEF2B /* QBColor.m */; };
+		E3ADCB1A1E814D2F004CEF2B /* QBFieldCell.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB181E814D2F004CEF2B /* QBFieldCell.m */; };
+		E3ADCB1B1E814D2F004CEF2B /* QBFieldCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = E3ADCB191E814D2F004CEF2B /* QBFieldCell.xib */; };
+		E3ADCB2B1E815174004CEF2B /* QBPushTableDataSource.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB2A1E815174004CEF2B /* QBPushTableDataSource.m */; };
+		E3ADCB2F1E815260004CEF2B /* QBPushNotificationModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB2E1E815260004CEF2B /* QBPushNotificationModel.m */; };
+		E3ADCB331E8152A9004CEF2B /* QBAppleBasedPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3ADCB321E8152A9004CEF2B /* QBAppleBasedPushModel.m */; };
+		E3B8CA881E815CA400B71B64 /* QBUniversalPushModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E3B8CA871E815CA400B71B64 /* QBUniversalPushModel.m */; };
+		E3FCF2BC1E81748D00A11063 /* QBInfoHeaderView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2BB1E81748D00A11063 /* QBInfoHeaderView.m */; };
+		E3FCF2C01E81786000A11063 /* QBCore.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2BF1E81786000A11063 /* QBCore.m */; };
+		E3FCF2CC1E817C9200A11063 /* SVIndefiniteAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2C31E817C9200A11063 /* SVIndefiniteAnimatedView.m */; };
+		E3FCF2CD1E817C9200A11063 /* SVProgressAnimatedView.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2C51E817C9200A11063 /* SVProgressAnimatedView.m */; };
+		E3FCF2CE1E817C9200A11063 /* SVProgressHUD.bundle in Resources */ = {isa = PBXBuildFile; fileRef = E3FCF2C71E817C9200A11063 /* SVProgressHUD.bundle */; };
+		E3FCF2CF1E817C9200A11063 /* SVProgressHUD.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2C91E817C9200A11063 /* SVProgressHUD.m */; };
+		E3FCF2D01E817C9200A11063 /* SVRadialGradientLayer.m in Sources */ = {isa = PBXBuildFile; fileRef = E3FCF2CB1E817C9200A11063 /* SVRadialGradientLayer.m */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E3ADCAC61E812BA5004CEF2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3ADCAA41E812BA5004CEF2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3ADCAAB1E812BA5004CEF2B;
+			remoteInfo = "push-sender-tools";
+		};
+		E3ADCAD11E812BA5004CEF2B /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E3ADCAA41E812BA5004CEF2B /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E3ADCAAB1E812BA5004CEF2B;
+			remoteInfo = "push-sender-tools";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E3ADCB021E8132A3004CEF2B /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				E3ADCB011E8132A3004CEF2B /* Quickblox.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E3ADCAAC1E812BA5004CEF2B /* push-sender-tools.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "push-sender-tools.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ADCAB01E812BA5004CEF2B /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
+		E3ADCAB21E812BA5004CEF2B /* QBAppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = QBAppDelegate.h; sourceTree = "<group>"; };
+		E3ADCAB31E812BA5004CEF2B /* QBAppDelegate.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = QBAppDelegate.m; sourceTree = "<group>"; };
+		E3ADCAB91E812BA5004CEF2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		E3ADCABB1E812BA5004CEF2B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		E3ADCABE1E812BA5004CEF2B /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		E3ADCAC01E812BA5004CEF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3ADCAC51E812BA5004CEF2B /* push-sender-toolsTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "push-sender-toolsTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ADCAC91E812BA5004CEF2B /* push_sender_toolsTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = push_sender_toolsTests.m; sourceTree = "<group>"; };
+		E3ADCACB1E812BA5004CEF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3ADCAD01E812BA5004CEF2B /* push-sender-toolsUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "push-sender-toolsUITests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		E3ADCAD41E812BA5004CEF2B /* push_sender_toolsUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = push_sender_toolsUITests.m; sourceTree = "<group>"; };
+		E3ADCAD61E812BA5004CEF2B /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		E3ADCAE61E812C7A004CEF2B /* Credentials.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = Credentials.plist; sourceTree = "<group>"; };
+		E3ADCAEA1E812DA6004CEF2B /* QBCredentials.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBCredentials.h; path = Model/QBCredentials/QBCredentials.h; sourceTree = "<group>"; };
+		E3ADCAEB1E812DA6004CEF2B /* QBCredentials.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBCredentials.m; path = Model/QBCredentials/QBCredentials.m; sourceTree = "<group>"; };
+		E3ADCAED1E813240004CEF2B /* push-sender-tools.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "push-sender-tools.entitlements"; sourceTree = "<group>"; };
+		E3ADCAEF1E813272004CEF2B /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		E3ADCAF11E813279004CEF2B /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		E3ADCAF31E81327E004CEF2B /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		E3ADCAF51E813283004CEF2B /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		E3ADCAF71E813287004CEF2B /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		E3ADCAF91E81328D004CEF2B /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		E3ADCAFB1E813292004CEF2B /* libresolv.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libresolv.tbd; path = usr/lib/libresolv.tbd; sourceTree = SDKROOT; };
+		E3ADCAFD1E813297004CEF2B /* libxml2.2.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libxml2.2.tbd; path = usr/lib/libxml2.2.tbd; sourceTree = SDKROOT; };
+		E3ADCAFF1E8132A3004CEF2B /* Quickblox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Quickblox.framework; sourceTree = "<group>"; };
+		E3ADCB041E813472004CEF2B /* QBPushNotificationsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBPushNotificationsViewController.h; path = Controller/QBPushNotificationsViewController/QBPushNotificationsViewController.h; sourceTree = "<group>"; };
+		E3ADCB051E813472004CEF2B /* QBPushNotificationsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBPushNotificationsViewController.m; path = Controller/QBPushNotificationsViewController/QBPushNotificationsViewController.m; sourceTree = "<group>"; };
+		E3ADCB091E81371B004CEF2B /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		E3ADCB0B1E8149B0004CEF2B /* QBFieldTableView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBFieldTableView.h; path = View/QBFieldTableView/QBFieldTableView.h; sourceTree = "<group>"; };
+		E3ADCB0C1E8149B0004CEF2B /* QBFieldTableView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBFieldTableView.m; path = View/QBFieldTableView/QBFieldTableView.m; sourceTree = "<group>"; };
+		E3ADCB131E814A6E004CEF2B /* QBColor.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBColor.h; path = Classes/QBColor/QBColor.h; sourceTree = "<group>"; };
+		E3ADCB141E814A6E004CEF2B /* QBColor.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBColor.m; path = Classes/QBColor/QBColor.m; sourceTree = "<group>"; };
+		E3ADCB171E814D2F004CEF2B /* QBFieldCell.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBFieldCell.h; path = View/QBFieldCell/QBFieldCell.h; sourceTree = "<group>"; };
+		E3ADCB181E814D2F004CEF2B /* QBFieldCell.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBFieldCell.m; path = View/QBFieldCell/QBFieldCell.m; sourceTree = "<group>"; };
+		E3ADCB191E814D2F004CEF2B /* QBFieldCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; name = QBFieldCell.xib; path = View/QBFieldCell/QBFieldCell.xib; sourceTree = "<group>"; };
+		E3ADCB291E815174004CEF2B /* QBPushTableDataSource.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBPushTableDataSource.h; path = Model/QBPushTableDataSource/QBPushTableDataSource.h; sourceTree = "<group>"; };
+		E3ADCB2A1E815174004CEF2B /* QBPushTableDataSource.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBPushTableDataSource.m; path = Model/QBPushTableDataSource/QBPushTableDataSource.m; sourceTree = "<group>"; };
+		E3ADCB2D1E815260004CEF2B /* QBPushNotificationModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBPushNotificationModel.h; path = Model/QBPushNotificationModel/QBPushNotificationModel.h; sourceTree = "<group>"; };
+		E3ADCB2E1E815260004CEF2B /* QBPushNotificationModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBPushNotificationModel.m; path = Model/QBPushNotificationModel/QBPushNotificationModel.m; sourceTree = "<group>"; };
+		E3ADCB311E8152A9004CEF2B /* QBAppleBasedPushModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBAppleBasedPushModel.h; path = Model/QBAppleBasedPush/QBAppleBasedPushModel.h; sourceTree = "<group>"; };
+		E3ADCB321E8152A9004CEF2B /* QBAppleBasedPushModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBAppleBasedPushModel.m; path = Model/QBAppleBasedPush/QBAppleBasedPushModel.m; sourceTree = "<group>"; };
+		E3B8CA861E815CA400B71B64 /* QBUniversalPushModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBUniversalPushModel.h; path = Model/QBUniversalPushModel/QBUniversalPushModel.h; sourceTree = "<group>"; };
+		E3B8CA871E815CA400B71B64 /* QBUniversalPushModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBUniversalPushModel.m; path = Model/QBUniversalPushModel/QBUniversalPushModel.m; sourceTree = "<group>"; };
+		E3FCF2BA1E81748D00A11063 /* QBInfoHeaderView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = QBInfoHeaderView.h; path = View/QBInfoHeaderView/QBInfoHeaderView.h; sourceTree = "<group>"; };
+		E3FCF2BB1E81748D00A11063 /* QBInfoHeaderView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = QBInfoHeaderView.m; path = View/QBInfoHeaderView/QBInfoHeaderView.m; sourceTree = "<group>"; };
+		E3FCF2BE1E81786000A11063 /* QBCore.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = QBCore.h; sourceTree = "<group>"; };
+		E3FCF2BF1E81786000A11063 /* QBCore.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = QBCore.m; sourceTree = "<group>"; };
+		E3FCF2C21E817C9200A11063 /* SVIndefiniteAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVIndefiniteAnimatedView.h; sourceTree = "<group>"; };
+		E3FCF2C31E817C9200A11063 /* SVIndefiniteAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVIndefiniteAnimatedView.m; sourceTree = "<group>"; };
+		E3FCF2C41E817C9200A11063 /* SVProgressAnimatedView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressAnimatedView.h; sourceTree = "<group>"; };
+		E3FCF2C51E817C9200A11063 /* SVProgressAnimatedView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressAnimatedView.m; sourceTree = "<group>"; };
+		E3FCF2C61E817C9200A11063 /* SVProgressHUD-Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "SVProgressHUD-Prefix.pch"; sourceTree = "<group>"; };
+		E3FCF2C71E817C9200A11063 /* SVProgressHUD.bundle */ = {isa = PBXFileReference; lastKnownFileType = "wrapper.plug-in"; path = SVProgressHUD.bundle; sourceTree = "<group>"; };
+		E3FCF2C81E817C9200A11063 /* SVProgressHUD.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVProgressHUD.h; sourceTree = "<group>"; };
+		E3FCF2C91E817C9200A11063 /* SVProgressHUD.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVProgressHUD.m; sourceTree = "<group>"; };
+		E3FCF2CA1E817C9200A11063 /* SVRadialGradientLayer.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SVRadialGradientLayer.h; sourceTree = "<group>"; };
+		E3FCF2CB1E817C9200A11063 /* SVRadialGradientLayer.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SVRadialGradientLayer.m; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E3ADCAA91E812BA5004CEF2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3ADCB0A1E81371B004CEF2B /* QuartzCore.framework in Frameworks */,
+				E3ADCAFE1E813297004CEF2B /* libxml2.2.tbd in Frameworks */,
+				E3ADCAFC1E813292004CEF2B /* libresolv.tbd in Frameworks */,
+				E3ADCAFA1E81328D004CEF2B /* libz.tbd in Frameworks */,
+				E3ADCAF81E813287004CEF2B /* Security.framework in Frameworks */,
+				E3ADCAF61E813283004CEF2B /* CoreGraphics.framework in Frameworks */,
+				E3ADCB001E8132A3004CEF2B /* Quickblox.framework in Frameworks */,
+				E3ADCAF41E81327E004CEF2B /* MobileCoreServices.framework in Frameworks */,
+				E3ADCAF21E813279004CEF2B /* SystemConfiguration.framework in Frameworks */,
+				E3ADCAF01E813272004CEF2B /* CFNetwork.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCAC21E812BA5004CEF2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCACD1E812BA5004CEF2B /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E3ADCAA31E812BA5004CEF2B = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAE61E812C7A004CEF2B /* Credentials.plist */,
+				E3ADCAAE1E812BA5004CEF2B /* push-sender-tools */,
+				E3ADCAC81E812BA5004CEF2B /* push-sender-toolsTests */,
+				E3ADCAD31E812BA5004CEF2B /* push-sender-toolsUITests */,
+				E3ADCAAD1E812BA5004CEF2B /* Products */,
+				E3ADCAEE1E813272004CEF2B /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		E3ADCAAD1E812BA5004CEF2B /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAAC1E812BA5004CEF2B /* push-sender-tools.app */,
+				E3ADCAC51E812BA5004CEF2B /* push-sender-toolsTests.xctest */,
+				E3ADCAD01E812BA5004CEF2B /* push-sender-toolsUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E3ADCAAE1E812BA5004CEF2B /* push-sender-tools */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAED1E813240004CEF2B /* push-sender-tools.entitlements */,
+				E3ADCB111E814A53004CEF2B /* Classes */,
+				E3ADCAE41E812BE3004CEF2B /* Storyboards & Xibs */,
+				E3ADCAE31E812BD5004CEF2B /* Controller */,
+				E3ADCB071E81353F004CEF2B /* View */,
+				E3ADCAE21E812BCC004CEF2B /* Model */,
+				E3ADCAE51E812BF3004CEF2B /* Resources */,
+				E3ADCAAF1E812BA5004CEF2B /* Supporting Files */,
+			);
+			path = "push-sender-tools";
+			sourceTree = "<group>";
+		};
+		E3ADCAAF1E812BA5004CEF2B /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAB01E812BA5004CEF2B /* main.m */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E3ADCAC81E812BA5004CEF2B /* push-sender-toolsTests */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAC91E812BA5004CEF2B /* push_sender_toolsTests.m */,
+				E3ADCACB1E812BA5004CEF2B /* Info.plist */,
+			);
+			path = "push-sender-toolsTests";
+			sourceTree = "<group>";
+		};
+		E3ADCAD31E812BA5004CEF2B /* push-sender-toolsUITests */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAD41E812BA5004CEF2B /* push_sender_toolsUITests.m */,
+				E3ADCAD61E812BA5004CEF2B /* Info.plist */,
+			);
+			path = "push-sender-toolsUITests";
+			sourceTree = "<group>";
+		};
+		E3ADCAE21E812BCC004CEF2B /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				E3B8CA851E815C8300B71B64 /* QBUniversalPushModel */,
+				E3ADCB301E815282004CEF2B /* QBAppleBasedPushModel */,
+				E3ADCB2C1E815231004CEF2B /* QBPushNotificationModel */,
+				E3ADCB281E81515A004CEF2B /* QBPushTableDataSource */,
+				E3ADCAE91E812D7F004CEF2B /* QBCredentials */,
+				E3ADCAE81E812D6F004CEF2B /* AppDelegate */,
+			);
+			name = Model;
+			sourceTree = "<group>";
+		};
+		E3ADCAE31E812BD5004CEF2B /* Controller */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB031E813445004CEF2B /* QBPushNotificationsViewController */,
+			);
+			name = Controller;
+			sourceTree = "<group>";
+		};
+		E3ADCAE41E812BE3004CEF2B /* Storyboards & Xibs */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB191E814D2F004CEF2B /* QBFieldCell.xib */,
+				E3ADCABD1E812BA5004CEF2B /* LaunchScreen.storyboard */,
+				E3ADCAB81E812BA5004CEF2B /* Main.storyboard */,
+			);
+			name = "Storyboards & Xibs";
+			sourceTree = "<group>";
+		};
+		E3ADCAE51E812BF3004CEF2B /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCABB1E812BA5004CEF2B /* Assets.xcassets */,
+				E3ADCAC01E812BA5004CEF2B /* Info.plist */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		E3ADCAE81E812D6F004CEF2B /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAB21E812BA5004CEF2B /* QBAppDelegate.h */,
+				E3ADCAB31E812BA5004CEF2B /* QBAppDelegate.m */,
+			);
+			name = AppDelegate;
+			sourceTree = "<group>";
+		};
+		E3ADCAE91E812D7F004CEF2B /* QBCredentials */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCAEA1E812DA6004CEF2B /* QBCredentials.h */,
+				E3ADCAEB1E812DA6004CEF2B /* QBCredentials.m */,
+			);
+			name = QBCredentials;
+			sourceTree = "<group>";
+		};
+		E3ADCAEE1E813272004CEF2B /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB091E81371B004CEF2B /* QuartzCore.framework */,
+				E3ADCAFF1E8132A3004CEF2B /* Quickblox.framework */,
+				E3ADCAFD1E813297004CEF2B /* libxml2.2.tbd */,
+				E3ADCAFB1E813292004CEF2B /* libresolv.tbd */,
+				E3ADCAF91E81328D004CEF2B /* libz.tbd */,
+				E3ADCAF71E813287004CEF2B /* Security.framework */,
+				E3ADCAF51E813283004CEF2B /* CoreGraphics.framework */,
+				E3ADCAF31E81327E004CEF2B /* MobileCoreServices.framework */,
+				E3ADCAF11E813279004CEF2B /* SystemConfiguration.framework */,
+				E3ADCAEF1E813272004CEF2B /* CFNetwork.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E3ADCB031E813445004CEF2B /* QBPushNotificationsViewController */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB041E813472004CEF2B /* QBPushNotificationsViewController.h */,
+				E3ADCB051E813472004CEF2B /* QBPushNotificationsViewController.m */,
+			);
+			name = QBPushNotificationsViewController;
+			sourceTree = "<group>";
+		};
+		E3ADCB071E81353F004CEF2B /* View */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCF2C11E817C9200A11063 /* SVProgressHUD */,
+				E3FCF2B91E81747400A11063 /* QBInfoHeaderView */,
+				E3ADCB161E814D09004CEF2B /* QBFieldCell */,
+				E3ADCB081E813546004CEF2B /* QBFieldTableView */,
+			);
+			name = View;
+			sourceTree = "<group>";
+		};
+		E3ADCB081E813546004CEF2B /* QBFieldTableView */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB0B1E8149B0004CEF2B /* QBFieldTableView.h */,
+				E3ADCB0C1E8149B0004CEF2B /* QBFieldTableView.m */,
+			);
+			name = QBFieldTableView;
+			sourceTree = "<group>";
+		};
+		E3ADCB111E814A53004CEF2B /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCF2BD1E81785300A11063 /* QBCore */,
+				E3ADCB121E814A5B004CEF2B /* QBColor */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		E3ADCB121E814A5B004CEF2B /* QBColor */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB131E814A6E004CEF2B /* QBColor.h */,
+				E3ADCB141E814A6E004CEF2B /* QBColor.m */,
+			);
+			name = QBColor;
+			sourceTree = "<group>";
+		};
+		E3ADCB161E814D09004CEF2B /* QBFieldCell */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB171E814D2F004CEF2B /* QBFieldCell.h */,
+				E3ADCB181E814D2F004CEF2B /* QBFieldCell.m */,
+			);
+			name = QBFieldCell;
+			sourceTree = "<group>";
+		};
+		E3ADCB281E81515A004CEF2B /* QBPushTableDataSource */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB291E815174004CEF2B /* QBPushTableDataSource.h */,
+				E3ADCB2A1E815174004CEF2B /* QBPushTableDataSource.m */,
+			);
+			name = QBPushTableDataSource;
+			sourceTree = "<group>";
+		};
+		E3ADCB2C1E815231004CEF2B /* QBPushNotificationModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB2D1E815260004CEF2B /* QBPushNotificationModel.h */,
+				E3ADCB2E1E815260004CEF2B /* QBPushNotificationModel.m */,
+			);
+			name = QBPushNotificationModel;
+			sourceTree = "<group>";
+		};
+		E3ADCB301E815282004CEF2B /* QBAppleBasedPushModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3ADCB311E8152A9004CEF2B /* QBAppleBasedPushModel.h */,
+				E3ADCB321E8152A9004CEF2B /* QBAppleBasedPushModel.m */,
+			);
+			name = QBAppleBasedPushModel;
+			sourceTree = "<group>";
+		};
+		E3B8CA851E815C8300B71B64 /* QBUniversalPushModel */ = {
+			isa = PBXGroup;
+			children = (
+				E3B8CA861E815CA400B71B64 /* QBUniversalPushModel.h */,
+				E3B8CA871E815CA400B71B64 /* QBUniversalPushModel.m */,
+			);
+			name = QBUniversalPushModel;
+			sourceTree = "<group>";
+		};
+		E3FCF2B91E81747400A11063 /* QBInfoHeaderView */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCF2BA1E81748D00A11063 /* QBInfoHeaderView.h */,
+				E3FCF2BB1E81748D00A11063 /* QBInfoHeaderView.m */,
+			);
+			name = QBInfoHeaderView;
+			sourceTree = "<group>";
+		};
+		E3FCF2BD1E81785300A11063 /* QBCore */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCF2BE1E81786000A11063 /* QBCore.h */,
+				E3FCF2BF1E81786000A11063 /* QBCore.m */,
+			);
+			name = QBCore;
+			sourceTree = "<group>";
+		};
+		E3FCF2C11E817C9200A11063 /* SVProgressHUD */ = {
+			isa = PBXGroup;
+			children = (
+				E3FCF2C21E817C9200A11063 /* SVIndefiniteAnimatedView.h */,
+				E3FCF2C31E817C9200A11063 /* SVIndefiniteAnimatedView.m */,
+				E3FCF2C41E817C9200A11063 /* SVProgressAnimatedView.h */,
+				E3FCF2C51E817C9200A11063 /* SVProgressAnimatedView.m */,
+				E3FCF2C61E817C9200A11063 /* SVProgressHUD-Prefix.pch */,
+				E3FCF2C71E817C9200A11063 /* SVProgressHUD.bundle */,
+				E3FCF2C81E817C9200A11063 /* SVProgressHUD.h */,
+				E3FCF2C91E817C9200A11063 /* SVProgressHUD.m */,
+				E3FCF2CA1E817C9200A11063 /* SVRadialGradientLayer.h */,
+				E3FCF2CB1E817C9200A11063 /* SVRadialGradientLayer.m */,
+			);
+			name = SVProgressHUD;
+			path = View/SVProgressHUD;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		E3ADCAAB1E812BA5004CEF2B /* push-sender-tools */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3ADCAD91E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-tools" */;
+			buildPhases = (
+				E3ADCAA81E812BA5004CEF2B /* Sources */,
+				E3ADCAA91E812BA5004CEF2B /* Frameworks */,
+				E3ADCAAA1E812BA5004CEF2B /* Resources */,
+				E3ADCB021E8132A3004CEF2B /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "push-sender-tools";
+			productName = "push-sender-tools";
+			productReference = E3ADCAAC1E812BA5004CEF2B /* push-sender-tools.app */;
+			productType = "com.apple.product-type.application";
+		};
+		E3ADCAC41E812BA5004CEF2B /* push-sender-toolsTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3ADCADC1E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-toolsTests" */;
+			buildPhases = (
+				E3ADCAC11E812BA5004CEF2B /* Sources */,
+				E3ADCAC21E812BA5004CEF2B /* Frameworks */,
+				E3ADCAC31E812BA5004CEF2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3ADCAC71E812BA5004CEF2B /* PBXTargetDependency */,
+			);
+			name = "push-sender-toolsTests";
+			productName = "push-sender-toolsTests";
+			productReference = E3ADCAC51E812BA5004CEF2B /* push-sender-toolsTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		E3ADCACF1E812BA5004CEF2B /* push-sender-toolsUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E3ADCADF1E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-toolsUITests" */;
+			buildPhases = (
+				E3ADCACC1E812BA5004CEF2B /* Sources */,
+				E3ADCACD1E812BA5004CEF2B /* Frameworks */,
+				E3ADCACE1E812BA5004CEF2B /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E3ADCAD21E812BA5004CEF2B /* PBXTargetDependency */,
+			);
+			name = "push-sender-toolsUITests";
+			productName = "push-sender-toolsUITests";
+			productReference = E3ADCAD01E812BA5004CEF2B /* push-sender-toolsUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E3ADCAA41E812BA5004CEF2B /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0820;
+				ORGANIZATIONNAME = Quickblox;
+				TargetAttributes = {
+					E3ADCAAB1E812BA5004CEF2B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8885H5G2YX;
+						ProvisioningStyle = Automatic;
+						SystemCapabilities = {
+							com.apple.Push = {
+								enabled = 1;
+							};
+						};
+					};
+					E3ADCAC41E812BA5004CEF2B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8885H5G2YX;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3ADCAAB1E812BA5004CEF2B;
+					};
+					E3ADCACF1E812BA5004CEF2B = {
+						CreatedOnToolsVersion = 8.2.1;
+						DevelopmentTeam = 8885H5G2YX;
+						ProvisioningStyle = Automatic;
+						TestTargetID = E3ADCAAB1E812BA5004CEF2B;
+					};
+				};
+			};
+			buildConfigurationList = E3ADCAA71E812BA5004CEF2B /* Build configuration list for PBXProject "push-sender-tools" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = E3ADCAA31E812BA5004CEF2B;
+			productRefGroup = E3ADCAAD1E812BA5004CEF2B /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E3ADCAAB1E812BA5004CEF2B /* push-sender-tools */,
+				E3ADCAC41E812BA5004CEF2B /* push-sender-toolsTests */,
+				E3ADCACF1E812BA5004CEF2B /* push-sender-toolsUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E3ADCAAA1E812BA5004CEF2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3ADCABF1E812BA5004CEF2B /* LaunchScreen.storyboard in Resources */,
+				E3FCF2CE1E817C9200A11063 /* SVProgressHUD.bundle in Resources */,
+				E3ADCAE71E812C7A004CEF2B /* Credentials.plist in Resources */,
+				E3ADCB1B1E814D2F004CEF2B /* QBFieldCell.xib in Resources */,
+				E3ADCABC1E812BA5004CEF2B /* Assets.xcassets in Resources */,
+				E3ADCABA1E812BA5004CEF2B /* Main.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCAC31E812BA5004CEF2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCACE1E812BA5004CEF2B /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E3ADCAA81E812BA5004CEF2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3FCF2BC1E81748D00A11063 /* QBInfoHeaderView.m in Sources */,
+				E3ADCB0D1E8149B0004CEF2B /* QBFieldTableView.m in Sources */,
+				E3ADCB331E8152A9004CEF2B /* QBAppleBasedPushModel.m in Sources */,
+				E3FCF2C01E81786000A11063 /* QBCore.m in Sources */,
+				E3ADCB1A1E814D2F004CEF2B /* QBFieldCell.m in Sources */,
+				E3FCF2CC1E817C9200A11063 /* SVIndefiniteAnimatedView.m in Sources */,
+				E3ADCAB41E812BA5004CEF2B /* QBAppDelegate.m in Sources */,
+				E3B8CA881E815CA400B71B64 /* QBUniversalPushModel.m in Sources */,
+				E3ADCB2F1E815260004CEF2B /* QBPushNotificationModel.m in Sources */,
+				E3FCF2CF1E817C9200A11063 /* SVProgressHUD.m in Sources */,
+				E3ADCB151E814A6E004CEF2B /* QBColor.m in Sources */,
+				E3ADCAB11E812BA5004CEF2B /* main.m in Sources */,
+				E3FCF2D01E817C9200A11063 /* SVRadialGradientLayer.m in Sources */,
+				E3FCF2CD1E817C9200A11063 /* SVProgressAnimatedView.m in Sources */,
+				E3ADCB061E813472004CEF2B /* QBPushNotificationsViewController.m in Sources */,
+				E3ADCB2B1E815174004CEF2B /* QBPushTableDataSource.m in Sources */,
+				E3ADCAEC1E812DA6004CEF2B /* QBCredentials.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCAC11E812BA5004CEF2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3ADCACA1E812BA5004CEF2B /* push_sender_toolsTests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E3ADCACC1E812BA5004CEF2B /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E3ADCAD51E812BA5004CEF2B /* push_sender_toolsUITests.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E3ADCAC71E812BA5004CEF2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3ADCAAB1E812BA5004CEF2B /* push-sender-tools */;
+			targetProxy = E3ADCAC61E812BA5004CEF2B /* PBXContainerItemProxy */;
+		};
+		E3ADCAD21E812BA5004CEF2B /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E3ADCAAB1E812BA5004CEF2B /* push-sender-tools */;
+			targetProxy = E3ADCAD11E812BA5004CEF2B /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E3ADCAB81E812BA5004CEF2B /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3ADCAB91E812BA5004CEF2B /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		E3ADCABD1E812BA5004CEF2B /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E3ADCABE1E812BA5004CEF2B /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E3ADCAD71E812BA5004CEF2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		E3ADCAD81E812BA5004CEF2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E3ADCADA1E812BA5004CEF2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "push-sender-tools/push-sender-tools.entitlements";
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "push-sender-tools/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-tools";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E3ADCADB1E812BA5004CEF2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = "push-sender-tools/push-sender-tools.entitlements";
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				INFOPLIST_FILE = "push-sender-tools/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-tools";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+		E3ADCADD1E812BA5004CEF2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				INFOPLIST_FILE = "push-sender-toolsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-toolsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/push-sender-tools.app/push-sender-tools";
+			};
+			name = Debug;
+		};
+		E3ADCADE1E812BA5004CEF2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				INFOPLIST_FILE = "push-sender-toolsTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-toolsTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/push-sender-tools.app/push-sender-tools";
+			};
+			name = Release;
+		};
+		E3ADCAE01E812BA5004CEF2B /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				INFOPLIST_FILE = "push-sender-toolsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-toolsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "push-sender-tools";
+			};
+			name = Debug;
+		};
+		E3ADCAE11E812BA5004CEF2B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DEVELOPMENT_TEAM = 8885H5G2YX;
+				INFOPLIST_FILE = "push-sender-toolsUITests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.quickblox.push-sender-toolsUITests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				TEST_TARGET_NAME = "push-sender-tools";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E3ADCAA71E812BA5004CEF2B /* Build configuration list for PBXProject "push-sender-tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3ADCAD71E812BA5004CEF2B /* Debug */,
+				E3ADCAD81E812BA5004CEF2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3ADCAD91E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-tools" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3ADCADA1E812BA5004CEF2B /* Debug */,
+				E3ADCADB1E812BA5004CEF2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3ADCADC1E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-toolsTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3ADCADD1E812BA5004CEF2B /* Debug */,
+				E3ADCADE1E812BA5004CEF2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E3ADCADF1E812BA5004CEF2B /* Build configuration list for PBXNativeTarget "push-sender-toolsUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E3ADCAE01E812BA5004CEF2B /* Debug */,
+				E3ADCAE11E812BA5004CEF2B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E3ADCAA41E812BA5004CEF2B /* Project object */;
+}
