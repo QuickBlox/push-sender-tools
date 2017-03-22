@@ -1,5 +1,47 @@
 <resources>
-    <string name="app_name">push-sender-tools</string>
+    <string name="app_name">Push Sender Tools</string>
     <string name="action_settings">Settings</string>
     <string name="section_format">Hello World from section: %1$d</string>
+    
+    <string-array name="android_based_parameters">
+        <item>notification.title</item>
+        <item>notification.body</item>
+        <item>notification.icon</item>
+        <item>notification.sound</item>
+        <item>notification.tag</item>
+        <item>notification.color</item>
+        <item>notification.click_action</item>
+        <item>notification.body_loc_key</item>
+        <item>notification.body_loc_args</item>
+        <item>notification.title_loc_key</item>
+        <item>notification.title_loc_args</item>
+        <item>data.message</item>
+        <item>data.key1</item>
+        <item>data.key2</item>
+    </string-array>
+
+    <string-array name="universal_parameters">
+        <item>message</item>
+        <item>sound</item>
+        <item>ios_sound</item>
+        <item>ios_badge</item>
+        <item>category_or_click_action</item>
+        <item>ios_category</item>
+        <item>ios_content_available</item>
+        <item>body_loc_key</item>
+        <item>body_loc_args</item>
+        <item>title</item>
+        <item>title_loc_key</item>
+        <item>title_loc_args</item>
+        <item>ios_action_loc_key</item>
+        <item>ios_thread_id</item>
+        <item>ios_launch_image</item>
+        <item>android_color</item>
+        <item>android_tag</item>
+        <item>android_icon</item>
+        <item>custom_param1</item>
+        <item>custom_param2</item>
+    </string-array>
+
+
 </resources>
