@@ -58,6 +58,7 @@
     __weak __typeof(self)weakSelf = self;
     [QBRequest sendPush:pushMessage toUsers:users successBlock:^(QBResponse * _Nonnull response, QBMEvent * _Nullable event) {
         
+        [weakSelf.delegate coreDidSendPushNotification:weakSelf];
         
     } errorBlock:^(QBError * _Nonnull error) {
         
@@ -80,6 +81,8 @@
     
     __weak __typeof(self)weakSelf = self;
     [QBRequest createEvent:event successBlock:^(QBResponse * _Nonnull response, NSArray<QBMEvent *> * _Nullable events) {
+        
+        [weakSelf.delegate coreDidSendPushNotification:weakSelf];
         
     } errorBlock:^(QBResponse * _Nonnull response) {
         

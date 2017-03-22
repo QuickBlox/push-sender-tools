@@ -16,6 +16,7 @@ NS_ASSUME_NONNULL_BEGIN
 @required
 - (void)coreDidLogin:(QBCore *)core;
 - (void)core:(QBCore *)core didFailToLoginWithReason:(NSString *)reason;
+- (void)coreDidSendPushNotification:(QBCore *)core;
 - (void)core:(QBCore *)core didFailToSendPushNotificationWithReason:(NSString *)reason;
 
 @end

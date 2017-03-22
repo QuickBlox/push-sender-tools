@@ -6,7 +6,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
-        <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -36,7 +35,7 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="poI-xm-NcY">
                                 <rect key="frame" x="0.0" y="497" width="375" height="170"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Received push" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-XE-tWZ">
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Received push notification" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-XE-tWZ">
                                         <rect key="frame" x="0.0" y="1" width="375" height="169"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -48,13 +47,13 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="poI-xm-NcY" secondAttribute="height" multiplier="75:34" id="2g6-E8-8Dv"/>
                                     <constraint firstAttribute="trailing" secondItem="Mtq-XE-tWZ" secondAttribute="trailing" id="Lxo-b8-Vxo"/>
                                     <constraint firstItem="Lw6-Ng-YyT" firstAttribute="leading" secondItem="poI-xm-NcY" secondAttribute="leading" id="W6h-e4-w1Y"/>
                                     <constraint firstItem="Lw6-Ng-YyT" firstAttribute="top" secondItem="poI-xm-NcY" secondAttribute="top" id="YeQ-Ez-3RF"/>
                                     <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="poI-xm-NcY" secondAttribute="top" constant="1" id="oF1-lI-Mn1"/>
                                     <constraint firstAttribute="bottom" secondItem="Mtq-XE-tWZ" secondAttribute="bottom" id="qMO-kk-g4r"/>
                                     <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="Lw6-Ng-YyT" secondAttribute="bottom" id="rDh-0J-cpk"/>
+                                    <constraint firstAttribute="height" constant="170" id="sbN-ot-795"/>
                                     <constraint firstItem="Mtq-XE-tWZ" firstAttribute="leading" secondItem="poI-xm-NcY" secondAttribute="leading" id="uy4-ej-8Fx"/>
                                     <constraint firstAttribute="trailing" secondItem="Lw6-Ng-YyT" secondAttribute="trailing" id="yxK-9j-G2c"/>
                                 </constraints>
@@ -128,6 +127,7 @@
                     </navigationItem>
                     <connections>
                         <outlet property="infoHeaderView" destination="LHk-Xp-5bN" id="9I6-Ph-1o1"/>
+                        <outlet property="receivedPushHeightConstraint" destination="sbN-ot-795" id="l2Z-of-5Iz"/>
                         <outlet property="segmentedControl" destination="kxP-zb-d1c" id="a9T-7w-MMJ"/>
                         <outlet property="tableView" destination="9RR-QS-khc" id="PvP-8z-FLl"/>
                         <outlet property="textView" destination="Mtq-XE-tWZ" id="bxY-2Q-bIf"/>

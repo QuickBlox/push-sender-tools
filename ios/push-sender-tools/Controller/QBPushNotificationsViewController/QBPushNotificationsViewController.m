@@ -19,6 +19,8 @@
 #import "SVProgressHUD.h"
 
 static NSString * const kQBTitleText = @"Push Sender Tools";
+static NSString * const kQBSendingPushText = @"Sending push";
+static NSString * const kQBReceivedPushText = @"Received push notification";
 
 typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     SegmentedControlPushTypeAppleBased = 0,
@@ -31,6 +33,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
 @property (weak, nonatomic) IBOutlet QBFieldTableView *tableView;
 @property (weak, nonatomic) IBOutlet UITextView *textView;
 @property (weak, nonatomic) IBOutlet QBInfoHeaderView *infoHeaderView;
+@property (weak, nonatomic) IBOutlet NSLayoutConstraint *receivedPushHeightConstraint;
 
 @property (strong, nonatomic) QBPushTableDataSource *appleBasedDataSource;
 @property (strong, nonatomic) QBPushTableDataSource *universalDataSource;
@@ -62,9 +65,15 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     // setup initial data source
     self.tableView.dataSource = self.appleBasedDataSource;
     
+    // notifications
     [[NSNotificationCenter defaultCenter] addObserver:self
                                              selector:@selector(pushDidReceive:)
                                                  name:@"kPushDidReceive"
+                                               object:nil];
+    
+    [[NSNotificationCenter defaultCenter] addObserver:self
+                                             selector:@selector(keyboardDidShow:)
+                                                 name:UIKeyboardDidShowNotification
                                                object:nil];
 }
 
@@ -84,25 +93,37 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     [self.view endEditing:NO];
     
     NSDictionary *dict = nil;
+    __weak __typeof(self)weakSelf = self;
+    void (^startPushSending)() = ^void() {
+        [weakSelf.infoHeaderView startActivityIndicator];
+        weakSelf.infoHeaderView.title = kQBSendingPushText;
+    };
     if (self.segmentedControl.selectedSegmentIndex == SegmentedControlPushTypeAppleBased) {
         
         dict = [self.appleBasedDataSource.model payload];
         if (dict.count > 0) {
-            
+            startPushSending();
             [self.core sendAppleBasedPushNotificationWithPayload:dict];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:@"All fields are empty"];
         }
     }
     else if (self.segmentedControl.selectedSegmentIndex == SegmentedControlPushTypeUniversal) {
         
         dict = self.universalDataSource.model.pushNotificationDictionary;
         if (dict.count > 0) {
-            
+            startPushSending();
             [self.core sendUniversalPushNotificationWithDict:dict];
+        }
+        else {
+            [SVProgressHUD showErrorWithStatus:@"All fields are empty"];
         }
     }
     else {
         NSAssert(nil, @"Unsupported segmented control selection.");
     }
+    startPushSending = nil;
 }
 
 - (IBAction)didPressClearButton:(UIBarButtonItem *)sender {
@@ -110,6 +131,7 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     [self.appleBasedDataSource.model.pushNotificationDictionary removeAllObjects];
     [self.universalDataSource.model.pushNotificationDictionary removeAllObjects];
     [self.tableView reloadData];
+    self.textView.text = kQBReceivedPushText;
 }
 
 - (IBAction)segmentedControlValueChanged:(UISegmentedControl *)sender {
@@ -135,21 +157,44 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     self.textView.text = [NSString stringWithFormat:@"%@", userInfo];
 }
 
+- (void)keyboardDidShow:(NSNotification *)notification {
+    static dispatch_once_t onceToken;
+    dispatch_once(&onceToken, ^{
+        NSDictionary *keyboardInfo = [notification userInfo];
+        NSValue *keyboardFrameBegin = [keyboardInfo valueForKey:UIKeyboardFrameBeginUserInfoKey];
+        CGRect keyboardFrameBeginRect = [keyboardFrameBegin CGRectValue];
+        self.receivedPushHeightConstraint.constant = CGRectGetHeight(keyboardFrameBeginRect);
+    });
+}
+
 // MARK: QBCoreDelegate
 
 - (void)coreDidLogin:(QBCore *)core {
     [self.core registerForRemoteNotifications];
-    [self.infoHeaderView stopActivityIndicator];
+    [self stopIndicatorAndShowTitle];
     self.navigationItem.rightBarButtonItem.enabled = YES;
-    self.infoHeaderView.title = kQBTitleText;
 }
 
 - (void)core:(QBCore *)core didFailToLoginWithReason:(NSString *)reason {
+    [self stopIndicatorAndShowTitle];
     [SVProgressHUD showErrorWithStatus:reason];
 }
 
+- (void)coreDidSendPushNotification:(QBCore *)core {
+    [self stopIndicatorAndShowTitle];
+    [SVProgressHUD showSuccessWithStatus:@"Sent"];
+}
+
 - (void)core:(QBCore *)core didFailToSendPushNotificationWithReason:(NSString *)reason {
+    [self stopIndicatorAndShowTitle];
     [SVProgressHUD showErrorWithStatus:reason];
+}
+
+// MARK: Helpers
+
+- (void)stopIndicatorAndShowTitle {
+    [self.infoHeaderView stopActivityIndicator];
+    self.infoHeaderView.title = kQBTitleText;
 }
 
 @end
