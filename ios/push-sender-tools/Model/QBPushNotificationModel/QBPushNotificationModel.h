@@ -13,5 +13,8 @@
 @property (strong, nonatomic) NSMutableDictionary *pushNotificationDictionary;
 
 - (NSArray *)model;
+// perform save to user defaults
+// will always load in init
+- (void)save;
 
 @end

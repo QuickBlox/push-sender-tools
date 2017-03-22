@@ -25,9 +25,18 @@
     if (self != nil) {
         
         _model = model;
+        
+        [[NSNotificationCenter defaultCenter] addObserver:self
+                                                 selector:@selector(appWillTerminate:)
+                                                     name:UIApplicationWillTerminateNotification
+                                                   object:nil];
     }
     
     return self;
+}
+
+- (void)appWillTerminate:(NSNotification *)notification {
+    [_model save];
 }
 
 // MARK: UITableViewDataSource
