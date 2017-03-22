@@ -46,6 +46,17 @@ NS_ASSUME_NONNULL_BEGIN
  */
 @property (nonatomic, readonly, nullable) QBContactList *contactList;
 
+/**
+ *  Get current chat user
+ */
+@property (nonatomic, readonly, copy, nullable) QBUUser *currentUser;
+
+
+/**
+ Current resource 
+ */
+@property (nonatomic, readonly, copy, nullable) NSString *currentResource;
+
 - (id)init NS_UNAVAILABLE;
 
 //MARK: - Multicast Delegate
@@ -139,13 +150,6 @@ NS_ASSUME_NONNULL_BEGIN
  *  @return YES if the request was sent successfully. If not - see log.
  */
 - (BOOL)sendPresenceWithStatus:(NSString *)status;
-
-/**
- *  Get current chat user
- *
- *  @return An instance of QBUUser
- */
-- (nullable QBUUser *)currentUser;
 
 //MARK: - Contact list
 
