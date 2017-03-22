@@ -37,7 +37,7 @@
                                 <rect key="frame" x="0.0" y="497" width="375" height="170"/>
                                 <subviews>
                                     <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" text="Received push" textAlignment="justified" translatesAutoresizingMaskIntoConstraints="NO" id="Mtq-XE-tWZ">
-                                        <rect key="frame" x="8" y="8" width="359" height="154"/>
+                                        <rect key="frame" x="0.0" y="1" width="375" height="169"/>
                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
@@ -48,19 +48,19 @@
                                     </view>
                                 </subviews>
                                 <constraints>
-                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="leading" secondItem="poI-xm-NcY" secondAttribute="leading" constant="8" id="1Dl-hC-7dZ"/>
                                     <constraint firstAttribute="width" secondItem="poI-xm-NcY" secondAttribute="height" multiplier="75:34" id="2g6-E8-8Dv"/>
-                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="poI-xm-NcY" secondAttribute="top" constant="8" id="4Ux-Nf-87P"/>
-                                    <constraint firstAttribute="bottom" secondItem="Mtq-XE-tWZ" secondAttribute="bottom" constant="8" id="A0s-lq-Yu1"/>
-                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="Lw6-Ng-YyT" secondAttribute="bottom" constant="7" id="NEI-xP-qTs"/>
+                                    <constraint firstAttribute="trailing" secondItem="Mtq-XE-tWZ" secondAttribute="trailing" id="Lxo-b8-Vxo"/>
                                     <constraint firstItem="Lw6-Ng-YyT" firstAttribute="leading" secondItem="poI-xm-NcY" secondAttribute="leading" id="W6h-e4-w1Y"/>
-                                    <constraint firstAttribute="trailing" secondItem="Mtq-XE-tWZ" secondAttribute="trailing" constant="8" id="WYo-IV-O9R"/>
                                     <constraint firstItem="Lw6-Ng-YyT" firstAttribute="top" secondItem="poI-xm-NcY" secondAttribute="top" id="YeQ-Ez-3RF"/>
+                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="poI-xm-NcY" secondAttribute="top" constant="1" id="oF1-lI-Mn1"/>
+                                    <constraint firstAttribute="bottom" secondItem="Mtq-XE-tWZ" secondAttribute="bottom" id="qMO-kk-g4r"/>
+                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="top" secondItem="Lw6-Ng-YyT" secondAttribute="bottom" id="rDh-0J-cpk"/>
+                                    <constraint firstItem="Mtq-XE-tWZ" firstAttribute="leading" secondItem="poI-xm-NcY" secondAttribute="leading" id="uy4-ej-8Fx"/>
                                     <constraint firstAttribute="trailing" secondItem="Lw6-Ng-YyT" secondAttribute="trailing" id="yxK-9j-G2c"/>
                                 </constraints>
                             </view>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="none" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="9RR-QS-khc" customClass="QBFieldTableView">
-                                <rect key="frame" x="0.0" y="108" width="375" height="389"/>
+                                <rect key="frame" x="0.0" y="108" width="375" height="382"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                             </tableView>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tYY-xC-N5S">

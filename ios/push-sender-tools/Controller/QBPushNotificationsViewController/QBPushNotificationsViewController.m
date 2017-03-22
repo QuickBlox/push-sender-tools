@@ -47,7 +47,6 @@ typedef NS_ENUM(NSUInteger, SegmentedControlPushType) {
     [super viewDidLoad];
     
     // initial controller setup
-    self.view.backgroundColor = QBTableViewBackgroundColor();
     [QBFieldCell registerForReuseInTableView:self.tableView];
     self.tableView.delegate = self;
     
