@@ -1,4 +1,4 @@
-package com.quickblox.push_sender_tools.ui;
+package com.quickblox.push_sender_tools.ui.activities;
 
 import android.support.design.widget.TabLayout;
 import android.support.v7.app.AppCompatActivity;

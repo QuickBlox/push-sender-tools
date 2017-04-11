@@ -1,0 +1,11 @@
+{
+  "app_id": "55225",
+  "auth_key": "eBT3XB5LPcS3W89",
+  "auth_secret": "LpP4gDbUutvAaSk",
+  "account_key": "",
+  "api_domain": "https://api.quickblox.com",
+  "chat_domain": "chat.quickblox.com",
+  "user_login": "pushsender",
+  "user_password": "pushsender"
+}
+
