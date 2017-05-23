@@ -6,4 +6,5 @@ public interface Consts {
     String EXTRA_GCM_MESSAGE = "message";
     String ACTION_NEW_GCM_EVENT = "new-push-event";
 
+    String ACTION_NEW_GCM_PUSH_RECEIVED = "new_gcm_push_received";
 }

@@ -1,31 +1,46 @@
 package com.quickblox.push_sender_tools.ui.fragments;
 
+import android.content.BroadcastReceiver;
 import android.content.Context;
+import android.content.Intent;
+import android.content.IntentFilter;
 import android.os.Bundle;
 import android.support.v4.app.Fragment;
+import android.support.v4.content.LocalBroadcastManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 import android.text.TextUtils;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
+import android.widget.ProgressBar;
+import android.widget.TextView;
 
+import com.quickblox.auth.session.QBSessionManager;
+import com.quickblox.core.QBEntityCallback;
+import com.quickblox.core.exception.QBResponseException;
+import com.quickblox.core.helper.StringifyArrayList;
+import com.quickblox.messages.QBPushNotifications;
 import com.quickblox.messages.model.QBEnvironment;
 import com.quickblox.messages.model.QBEvent;
-import com.quickblox.messages.model.QBNotificationChannel;
 import com.quickblox.messages.model.QBNotificationType;
+import com.quickblox.messages.model.QBPushType;
 import com.quickblox.push_sender_tools.R;
 import com.quickblox.push_sender_tools.models.EventParameter;
 import com.quickblox.push_sender_tools.ui.adapters.ParametersAdapter;
+import com.quickblox.push_sender_tools.utils.Consts;
+import com.quickblox.push_sender_tools.utils.Toaster;
 
 import org.json.JSONException;
 import org.json.JSONObject;
 
 import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.Map;
 
 public class PlaceholderFragment extends Fragment {
+    private static final String TAG = PlaceholderFragment.class.getSimpleName();
     /**
      * The fragment argument representing the section number for this
      * fragment.
@@ -36,6 +51,20 @@ public class PlaceholderFragment extends Fragment {
     private boolean isAndroidBasedPushes;
     private String[] parametersArray;
     private RecyclerView parametersList;
+    private ParametersAdapter parametersAdapter;
+    private Button sendButton;
+    private ProgressBar createEventProgressBar;
+
+    private BroadcastReceiver pushBroadcastReceiver = new BroadcastReceiver() {
+        @Override
+        public void onReceive(Context context, Intent intent) {
+            String message = intent.getStringExtra(Consts.EXTRA_GCM_MESSAGE);
+            Log.i(TAG, "Receiving event " + Consts.ACTION_NEW_GCM_EVENT + " with data: " + message);
+            pushPreviewTextView.setText(prepareTextFromExtras(intent.getExtras()));
+        }
+    };
+
+    private TextView pushPreviewTextView;
 
     public PlaceholderFragment() {
     }
@@ -57,35 +86,65 @@ public class PlaceholderFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         isAndroidBasedPushes = getArguments().getInt(ARG_SECTION_NUMBER) == 0;
-        View rootView = inflater.inflate(R.layout.fragment_android_based_pushes, container, false);
+        View rootView = inflater.inflate(R.layout.fragment_parameters_list, container, false);
 
-        parametersList = (RecyclerView) rootView.findViewById(R.id.parameters_list);
+        parametersList = (RecyclerView) rootView.findViewById(R.id.parameters_list_recycle_view);
         parametersList.setLayoutManager(new LinearLayoutManager(getContext()));
 
         parametersArray = getResources().getStringArray(isAndroidBasedPushes
                 ? R.array.android_based_parameters
                 : R.array.universal_parameters);
 
-
-        ParametersAdapter parametersAdapter = new ParametersAdapter(context, buildParametersList(parametersArray));
+        parametersAdapter = new ParametersAdapter(context, buildBlankParametersList(parametersArray));
 
         parametersList.setAdapter(parametersAdapter);
         parametersAdapter.notifyDataSetChanged();
 
+        sendButton = (Button) rootView.findViewById(R.id.send_button);
+        sendButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                sendEvent();
+            }
+        });
+
+        createEventProgressBar = (ProgressBar) rootView.findViewById(R.id.create_event_progress_bar);
+
+        pushPreviewTextView = (TextView) rootView.findViewById(R.id.push_preview_text_view);
+
+        registerReceiver();
         return rootView;
     }
 
-    public void sendEvent(){
+    public void sendEvent() {
+        createEventProgressBar.setVisibility(View.VISIBLE);
+        QBPushNotifications.createEvent(createEvent()).performAsync(new QBEntityCallback<QBEvent>() {
+            @Override
+            public void onSuccess(QBEvent qbEvent, Bundle bundle) {
+                createEventProgressBar.setVisibility(View.GONE);
+                clearParametersAdapter();
 
+            }
+
+            @Override
+            public void onError(QBResponseException e) {
+                createEventProgressBar.setVisibility(View.GONE);
+                Toaster.longToast("Create event error: " + e.getMessage());
+            }
+        });
     }
 
-    private QBEvent createEvent(){
+    private QBEvent createEvent() {
         QBEvent event = new QBEvent();
         event.setEnvironment(QBEnvironment.DEVELOPMENT);
         event.setNotificationType(QBNotificationType.PUSH);
 
+        StringifyArrayList<Integer> userIds = new StringifyArrayList<>();
+        userIds.add(QBSessionManager.getInstance().getSessionParameters().getUserId());
+        event.setUserIds(userIds);
+
         if (isAndroidBasedPushes) {
-            event.setNotificationChannel(QBNotificationChannel.GCM);
+            event.setPushType(QBPushType.GCM);
             event.setMessage(collectMapEnteredParameters());
         } else {
             event.setMessage(collectJsonEnteredParameters().toString());
@@ -94,29 +153,28 @@ public class PlaceholderFragment extends Fragment {
         return event;
     }
 
-    private HashMap<String, Object> collectMapEnteredParameters(){
+    private HashMap<String, Object> collectMapEnteredParameters() {
         HashMap<String, Object> parameters = new HashMap<>();
-        int childCount = parametersList.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childView = parametersList.getChildAt(i);
-            ParametersAdapter.ViewHolder childViewHolder = (ParametersAdapter.ViewHolder) parametersList.getChildViewHolder(childView);
-            if (TextUtils.isEmpty(childViewHolder.getParameterValue())) {
-                parameters.put(parametersArray[i], childViewHolder.getParameterValue());
+
+        ArrayList<EventParameter> eventParameters = parametersAdapter.getItems();
+
+        for (EventParameter parameter : eventParameters) {
+            if (!TextUtils.isEmpty(parameter.getParameterValue())) {
+                parameters.put(parameter.getParameterName(), parameter.getParameterValue());
             }
         }
 
         return parameters;
     }
 
-    private JSONObject collectJsonEnteredParameters(){
+    private JSONObject collectJsonEnteredParameters() {
         JSONObject parameters = new JSONObject();
-        int childCount = parametersList.getChildCount();
-        for (int i = 0; i < childCount; i++) {
-            View childView = parametersList.getChildAt(i);
-            ParametersAdapter.ViewHolder childViewHolder = (ParametersAdapter.ViewHolder) parametersList.getChildViewHolder(childView);
-            if (TextUtils.isEmpty(childViewHolder.getParameterValue())) {
+        ArrayList<EventParameter> eventParameters = parametersAdapter.getItems();
+
+        for (EventParameter parameter : eventParameters) {
+            if (!TextUtils.isEmpty(parameter.getParameterValue())) {
                 try {
-                    parameters.put(parametersArray[i], childViewHolder.getParameterValue());
+                    parameters.put(parameter.getParameterName(), parameter.getParameterValue());
                 } catch (JSONException e) {
                     e.printStackTrace();
                 }
@@ -126,7 +184,7 @@ public class PlaceholderFragment extends Fragment {
         return parameters;
     }
 
-    private ArrayList<EventParameter> buildParametersList(String[] parametersArray){
+    private ArrayList<EventParameter> buildBlankParametersList(String[] parametersArray) {
         ArrayList<EventParameter> parameters = new ArrayList<>(parametersArray.length);
 
         for (String aParametersArray : parametersArray) {
@@ -134,5 +192,28 @@ public class PlaceholderFragment extends Fragment {
         }
 
         return parameters;
+    }
+
+    private void clearParametersAdapter(){
+        parametersAdapter.setData(buildBlankParametersList(parametersArray));
+    }
+
+    private void registerReceiver() {
+        LocalBroadcastManager.getInstance(getContext()).registerReceiver(pushBroadcastReceiver,
+                new IntentFilter(Consts.ACTION_NEW_GCM_PUSH_RECEIVED));
+    }
+
+    private String prepareTextFromExtras(Bundle extras) {
+        StringBuilder stringBuilder = new StringBuilder();
+        for (String extrasKey : extras.keySet()){
+            stringBuilder.append(extrasKey).append(" = ").append(extras.getString(extrasKey)).append(";\n");
+        }
+        return stringBuilder.toString();
+    }
+
+    @Override
+    public void onDestroyView() {
+        super.onDestroyView();
+        LocalBroadcastManager.getInstance(getContext()).unregisterReceiver(pushBroadcastReceiver);
     }
 }
