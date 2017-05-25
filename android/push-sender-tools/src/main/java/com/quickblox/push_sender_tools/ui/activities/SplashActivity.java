@@ -73,7 +73,7 @@ public class SplashActivity extends BaseActivity {
     }
 
     protected void proceedToTheNextActivity() {
-        MessagesActivity.start(this, message);
+        MainActivity.start(this, message);
         finish();
     }
 

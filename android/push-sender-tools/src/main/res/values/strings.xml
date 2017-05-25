@@ -41,7 +41,8 @@
     <string name="sender_id">761750217637</string>
 
     <string name="send_button_text">Send</string>
-    
+    <string name="clear_received_data_text">Clear received data</string>
+
     <string-array name="android_based_parameters">
         <item>notification.title</item>
         <item>notification.body</item>

@@ -49,10 +49,6 @@ public class ParametersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
         return parameters;
     }
 
-    public void clearData() {
-        parameters.clear();
-    }
-
     public void setData(ArrayList<EventParameter> eventParameters) {
         parameters = eventParameters;
         notifyDataSetChanged();
@@ -70,11 +66,6 @@ public class ParametersAdapter extends RecyclerView.Adapter<RecyclerView.ViewHol
             this.parameterChangedListener = parameterChangedListener;
             this.parameterValue.addTextChangedListener(parameterChangedListener);
         }
-
-        public String getParameterValue(){
-            return String.valueOf(parameterValue.getText());
-        }
-
     }
 
     private class ParameterChangedListener implements TextWatcher{

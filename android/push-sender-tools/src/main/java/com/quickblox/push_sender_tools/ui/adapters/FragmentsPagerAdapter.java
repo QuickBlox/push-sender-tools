@@ -5,14 +5,14 @@ import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
 import android.support.v4.app.FragmentPagerAdapter;
 
-import com.quickblox.push_sender_tools.ui.fragments.PlaceholderFragment;
+import com.quickblox.push_sender_tools.ui.fragments.SendPusFragment;
 
-public class SectionsPagerAdapter extends FragmentPagerAdapter {
+public class FragmentsPagerAdapter extends FragmentPagerAdapter {
 
 
     private final Context context;
 
-    public SectionsPagerAdapter(Context context, FragmentManager fm) {
+    public FragmentsPagerAdapter(Context context, FragmentManager fm) {
         super(fm);
         this.context = context;
     }
@@ -20,8 +20,8 @@ public class SectionsPagerAdapter extends FragmentPagerAdapter {
     @Override
     public Fragment getItem(int position) {
         // getItem is called to instantiate the fragment for the given page.
-        // Return a PlaceholderFragment (defined as a static inner class below).
-        return PlaceholderFragment.newInstance(context, position);
+        // Return a SendPusFragment (defined as a static inner class below).
+        return SendPusFragment.newInstance(context, position);
     }
 
     @Override

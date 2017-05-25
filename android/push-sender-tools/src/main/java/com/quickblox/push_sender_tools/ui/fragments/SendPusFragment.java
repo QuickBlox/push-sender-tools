@@ -39,21 +39,24 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.HashMap;
 
-public class PlaceholderFragment extends Fragment {
-    private static final String TAG = PlaceholderFragment.class.getSimpleName();
+public class SendPusFragment extends Fragment {
+    private static final String TAG = SendPusFragment.class.getSimpleName();
     /**
      * The fragment argument representing the section number for this
      * fragment.
      */
     private static final String ARG_SECTION_NUMBER = "section_number";
+    private static final String EMPTY_STRING = "";
+
 
     private static Context context;
     private boolean isAndroidBasedPushes;
     private String[] parametersArray;
+    private ProgressBar createEventProgressBar;
     private RecyclerView parametersList;
     private ParametersAdapter parametersAdapter;
-    private Button sendButton;
-    private ProgressBar createEventProgressBar;
+    private Button sendButton, clearReseivedDataButton;
+    private TextView pushPreviewTextView;
 
     private BroadcastReceiver pushBroadcastReceiver = new BroadcastReceiver() {
         @Override
@@ -64,18 +67,16 @@ public class PlaceholderFragment extends Fragment {
         }
     };
 
-    private TextView pushPreviewTextView;
-
-    public PlaceholderFragment() {
+    public SendPusFragment() {
     }
 
     /**
      * Returns a new instance of this fragment for the given section
      * number.
      */
-    public static PlaceholderFragment newInstance(Context context, int sectionNumber) {
-        PlaceholderFragment.context = context;
-        PlaceholderFragment fragment = new PlaceholderFragment();
+    public static SendPusFragment newInstance(Context context, int sectionNumber) {
+        SendPusFragment.context = context;
+        SendPusFragment fragment = new SendPusFragment();
         Bundle args = new Bundle();
         args.putInt(ARG_SECTION_NUMBER, sectionNumber);
         fragment.setArguments(args);
@@ -105,6 +106,14 @@ public class PlaceholderFragment extends Fragment {
             @Override
             public void onClick(View v) {
                 sendEvent();
+            }
+        });
+
+        clearReseivedDataButton = (Button) rootView.findViewById(R.id.clear_received_data);
+        clearReseivedDataButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                pushPreviewTextView.setText(EMPTY_STRING);
             }
         });
 
@@ -206,7 +215,7 @@ public class PlaceholderFragment extends Fragment {
     private String prepareTextFromExtras(Bundle extras) {
         StringBuilder stringBuilder = new StringBuilder();
         for (String extrasKey : extras.keySet()){
-            stringBuilder.append(extrasKey).append(" = ").append(extras.getString(extrasKey)).append(";\n");
+            stringBuilder.append(extrasKey).append(" = ").append(String.valueOf(extras.get(extrasKey))).append(";\n");
         }
         return stringBuilder.toString();
     }
