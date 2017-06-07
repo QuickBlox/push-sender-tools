@@ -1,0 +1,87 @@
+<resources>
+    <string name="app_name">Push Sender Tools</string>
+    <string name="action_settings">Settings</string>
+    <string name="section_format">Hello World from section: %1$d</string>
+
+    <string name="please_wait">Please wait…</string>
+
+    <string name="dlg_error">Error</string>
+    <string name="dlg_ok">OK</string>
+    <string name="dlg_cancel">Cancel</string>
+    <string name="dlg_loading">Loading…</string>
+    <string name="dlg_choose_image_from">Select photo from…</string>
+    <string name="dlg_retry">Retry</string>
+
+    <string name="init_configs_error">Initializing configs error</string>
+
+    <string name="no_internet_connection">No internet connection</string>
+
+    <string name="splash_app_version">v %s</string>
+
+    <string name="error_parsing_configs">Parsing sample\'s configs error</string>
+
+    <string name="app_title">Push Sender Tools</string>
+    <string name="activity_title">Push Sender Tools</string>
+
+    <string name="message">Incoming message</string>
+    <string name="hint_enter_your_message">Enter push message here</string>
+    <string name="send_push">Send push</string>
+    <string name="received_messages">Received Push Notifications</string>
+    <string name="no_messages">No messages received yet</string>
+    <string name="notification_title">GCM Notification</string>
+    <string name="error_field_is_empty">Field is empty!</string>
+    <string name="splash_create_session_error">Create session errors:</string>
+    <string name="connection_error">Connection errors:</string>
+    <string name="error_too_long_push">You can enter only 1000 characters!</string>
+
+    <string name="enable_notification">Enable Notification</string>
+    <string name="disable_notification">Disable Notification</string>
+    <string name="subtitle_enabled">Notification enabled</string>
+    <string name="subtitle_disabled">Notification disabled</string>
+    <string name="sender_id">761750217637</string>
+
+    <string name="send_button_text">Send</string>
+    <string name="clear_received_data_text">Clear received data</string>
+
+    <string-array name="android_based_parameters">
+        <item>notification.title</item>
+        <item>notification.body</item>
+        <item>notification.icon</item>
+        <item>notification.sound</item>
+        <item>notification.tag</item>
+        <item>notification.color</item>
+        <item>notification.click_action</item>
+        <item>notification.body_loc_key</item>
+        <item>notification.body_loc_args</item>
+        <item>notification.title_loc_key</item>
+        <item>notification.title_loc_args</item>
+        <item>data.message</item>
+        <item>data.key1</item>
+        <item>data.key2</item>
+    </string-array>
+
+    <string-array name="universal_parameters">
+        <item>message</item>
+        <item>sound</item>
+        <item>ios_sound</item>
+        <item>ios_badge</item>
+        <item>category_or_click_action</item>
+        <item>ios_category</item>
+        <item>ios_content_available</item>
+        <item>body_loc_key</item>
+        <item>body_loc_args</item>
+        <item>title</item>
+        <item>title_loc_key</item>
+        <item>title_loc_args</item>
+        <item>ios_action_loc_key</item>
+        <item>ios_thread_id</item>
+        <item>ios_launch_image</item>
+        <item>android_color</item>
+        <item>android_tag</item>
+        <item>android_icon</item>
+        <item>custom_param1</item>
+        <item>custom_param2</item>
+    </string-array>
+
+
+</resources>

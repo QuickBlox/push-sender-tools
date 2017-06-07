@@ -1,0 +1,11 @@
+{
+  "app_id": "16",
+  "auth_key": "rGA-RQnUgLLynRe",
+  "auth_secret": "n57VGRJwxPNkxPT",
+  "account_key": "",
+  "api_domain": "https://apistage2.quickblox.com",
+  "chat_domain": "chatstage2.quickblox.com",
+  "user_login": "pushsender",
+  "user_password": "pushsender"
+}
+
